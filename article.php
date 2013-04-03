@@ -1,20 +1,20 @@
 <?php 
 	/* 
-		Warning - this is the scariest page. BOO! See. 
+	Warning - this is the scariest page. BOO! See. 
 
-		The flow is a bit odd, in order to be efficient:
+	The flow is a bit odd, in order to be efficient:
 
-			1. Fetch the article to a variable
-			2. Output the top layout
-			3. Fetch comments, and substitute them for a placeholder in the article HTML
-			4. Output the article and comments to the page
-			5. Output related articles
-			6. Outpu the bottom layout
+		1. Fetch the article to a variable
+		2. Output the top layout
+		3. Fetch comments, and substitute them for a placeholder in the article HTML
+		4. Output the article and comments to the page
+		5. Output related articles
+		6. Output the bottom layout
 
-		We get the article first as we need to check it exists and is viewable, else we redirect the user away.
+	We get the article first as we need to check it exists and is viewable, else we redirect the user away.
 
-		The comments are nestled deep in the article template, so it's simplest to render the article with a placeholder for comments.
-		Once we've got both the article and the comments, we replace the placeholder with the comments.
+	The comments are nestled deep in the article template, so it's simplest to render the article with a placeholder for comments.
+	Once we've got both the article and the comments, we replace the placeholder with the comments.
 
 	*/
 
