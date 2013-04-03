@@ -1,4 +1,4 @@
-PerchExample-24ways2012
-=======================
+Perch Example: 24 ways
+======================
 
-The Perch files for 24ways.org, 2012 design
+These are the pages and templates for the website [24ways.org](http://24ways.org/) as it stood in 2012. It use [Perch](http://grabaperch.com/) as the content management system.
