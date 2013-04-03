@@ -32,11 +32,3 @@ RewriteRule ^rss/$ /rss.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ /$1/ [L,R=301]
-
-# Redirect to PHP if it exists.
-# e.g. example.com/foo will display the contents of example.com/foo.php
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME}.php -f
-#RewriteRule ^(.+)$ $1.php [L,QSA]
-
