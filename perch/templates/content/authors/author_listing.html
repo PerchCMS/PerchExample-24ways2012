@@ -1,0 +1,13 @@
+<perch:before>
+<h2><a href="/authors/">Meet our lovely authors</a></h2>
+<ul id="authorlist">
+</perch:before>
+<li>
+	<a href="/authors/<perch:content id="slug" />/">
+		<img src="http://cloud.24ways.org/authors/<perch:content id="slug" />160.jpg" width="160" height="160" alt="<perch:content id="firstname" /> <perch:content id="lastname" />" />
+		<strong><perch:content id="firstname" /> <span><perch:content id="lastname" /></span></strong>	
+	</a>
+</li>
+<perch:after>
+</ul>
+</perch:after>

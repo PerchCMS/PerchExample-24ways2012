@@ -1,0 +1,24 @@
+<perch:before><?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>24 ways</title>
+		<link>http://24ways.org/</link>
+		<description>Web design and development articles and tutorials for advent.</description>
+		<language>en-gb</language>
+		<pubDate><perch:content id="today" format="D, d M Y h:i:s O" /></pubDate>
+		<lastBuildDate><perch:content id="today" format="D, d M Y h:i:s O" /></lastBuildDate>
+		<generator>Perch CMS http://grabaperch.com/</generator>
+		<atom:link href="http://24ways.org/rss/" rel="self" type="application/rss+xml" />
+</perch:before>
+		<item>
+			<title><perch:content id="title" /></title>
+			<author>feeds@allinthehead.com (<perch:content id="author" type="related" output="firstname" /> <perch:content id="author" type="related" output="lastname" />)</author>
+			<category><perch:content id="category" /></category>
+			<link>http://24ways.org/<perch:content id="date" format="Y" />/<perch:content id="slug" />/</link>
+			<description><![CDATA[<perch:content id="excerpt" type="textarea" label="Excerpt" textile="true" />]]></description>
+			<pubDate><perch:content id="date" format="D, d M Y h:i:s O" /></pubDate>
+			<guid>http://24ways.org/<perch:content id="date" format="Y" />/<perch:content id="slug" />/</guid>
+		</item>
+<perch:after>
+	</channel>
+</rss></perch:after>

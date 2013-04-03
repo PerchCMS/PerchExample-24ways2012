@@ -1,0 +1,15 @@
+<perch:before>
+<div id="related">
+	<h3>Related articles</h3>	
+	<ul>
+</perch:before>
+	    <li>
+			<h4><a rel="bookmark" href="/<perch:content id="date" format="Y" />/<perch:content id="slug" />/"><perch:content id="title" /></a></h4>
+			<p><perch:content id="date" format="d/m/Y" /> by <a href="/authors/<perch:content id="author" type="related" output="slug" />"><perch:content id="author" type="related" output="firstname" /> <perch:content id="author" type="related" output="lastname" /></a></p>
+		</li>
+<perch:after>
+    </ul>
+	<p><a href="/2011/">Article archives&hellip;</a></p>
+</div><!-- related -->
+<perch:template path="content/perch_ad.html" />
+</perch:after>

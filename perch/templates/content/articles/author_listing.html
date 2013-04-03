@@ -1,0 +1,16 @@
+<perch:before>
+<div id="authorarticles">
+	<h3>Articles by <perch:content id="author" type="related" output="firstname" /> <perch:content id="author" type="related" output="lastname" /></h3>
+	<ul>
+</perch:before>
+		<li>
+			<h4>
+				<strong><perch:content id="date" format="j" /> <em>12/<perch:content id="date" format="Y" /></em></strong>
+				<a href="/<perch:content id="date" format="Y" />/<perch:content id="slug" />/"><perch:content id="title" /></a>
+			</h4>
+			<perch:content id="excerpt" type="textarea" label="Excerpt" textile="true" />
+		</li>
+<perch:after>
+	</ul>
+</div>
+</perch:after>

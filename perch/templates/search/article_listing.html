@@ -1,0 +1,31 @@
+<perch:before>
+<h2><a href="/search/">Search results for &#8220;<perch:search id="key" />&#8221;</a></h2>
+
+<ul id="articlelist">
+</perch:before>
+
+        <li>
+            <h3><a href="<perch:search id="url" />"><perch:search id="title" /></a></h3>
+            <p><perch:if exists="pageNavText">
+                    24 ways <perch:search id="pageNavText" />
+                <perch:else />
+                    <perch:search id="url" />
+                </perch:if>
+            </p>
+        </li>
+
+
+
+<perch:after>
+</ul>
+</perch:after>
+
+
+<perch:noresults>
+
+    <perch:if exists="key">
+        <h2><a href="/search/">No results for &#8220;<perch:search id="key" />&#8221;</a></h2>
+    </perch:if>
+
+
+</perch:noresults>

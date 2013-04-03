@@ -1,0 +1,10 @@
+
+<p id="allauthors"><a href="/authors/">&larr; See all authors</a></p>
+<h2><a href="/authors/<perch:content id="slug" type="text" label="Slug" order="3" required="true" help="Should be firstnamelastname" />/"><perch:content id="firstname" label="First name" type="text" order="1" required="true" title="true" /> <perch:content id="lastname" label="Last name" type="text" order="2" required="true" title="true" /></a></h2>
+<p id="authorpicture"><img src="http://cloud.24ways.org/authors/<perch:content id="slug" />280.jpg" width="280" height="280" alt="<perch:content id="firstname" /> <perch:content id="lastname" />" class="photo" /></p>
+<div id="aboutauthor">
+	<perch:content id="bio" type="textarea" label="Bio" textile="true" order="4" html="true" />
+</div>
+
+<perch:content id="url" type="url" label="URL" suppress="true" order="5" placeholder="http://" />
+<perch:content id="active" type="date" value="2005-12-01" label="Active" suppress="true" order="6" />

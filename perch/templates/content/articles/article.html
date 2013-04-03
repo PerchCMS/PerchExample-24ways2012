@@ -1,0 +1,34 @@
+
+<perch:content id="excerpt" type="textarea" label="Excerpt" textile="true" html="true" suppress="true" order="3" size="m" />
+<perch:content id="impress" type="text" label="Impress with" size="xl"  suppress="true" order="4" />
+<perch:content id="author" type="related" page="/authors.php" region="Authors" options="firstname lastname" default="slug" label="Author" suppress="true" order="5" title="true" />
+<perch:content id="category" type="dataselect" page="categories" region="Categories" options="name" values="slug" label="Category" suppress="true" order="10" />
+
+<div class="meta">
+	<h2><strong><perch:content id="date" type="date" label="Day" required="true" order="6" format="j" default="2012-12-30" /> <em><perch:content id="date" type="date" label="Day" required="true" order="6" format="m/Y" /></em></strong> <a href="http://<perch:content id="domain" type="hidden" />/<perch:content id="year" type="hidden" />/<perch:content id="slug" type="text" label="URL" size="xl" />/" rel="bookmark"><perch:content id="title" type="text" label="Title" required="true" order="1" size="xl" title="true" /></a></h2>
+	<p>by <a href="<perch:content id="author" type="related" output="url" />"><perch:content id="author" type="related" label="First name" output="firstname" /> <perch:content id="author" type="related" output="lastname" label="Last name" /></a></p>
+	<ul>
+		<li id="goto-article"><a href="#article">Article</a></li>
+		<li id="goto-comments"><a href="#comments"><strong><!-- replaced with comment count --></strong> comments</a></li>
+	</ul>
+</div><!-- meta -->
+<div id="article">
+    <perch:content id="article" type="magictextarea" label="Article" textile="true" order="2" size="xxxl" html="true" />
+    <div class="domore">
+        <h3>Like what you read?</h3>
+        <ul>
+            <li class="tweetthis"><a href="http://twitter.com/?status=<perch:content id="title" replace=" |%20" />%20http://24ways.org/<perch:content id="date" format="Y" type="hidden" /><perch:content id="date" format="d" />">Tweet this article</a></li>
+            <li>or</li>
+            <li id="goto-comments-alt" class="leavecomment"><a href="#comments">Leave a comment</a></li>
+        </ul>
+    </div>
+</div><!-- article -->
+
+<!-- replaced with comments listing -->
+
+<div id="author">
+    <h3>About the author</h3>
+    <p><a href="/authors/<perch:content id="author" type="related" output="slug" />/" title="More information about <perch:content id="author" type="related" output="firstname" /> <perch:content id="author" type="related" output="lastname" />"><img src="http://cloud.24ways.org/authors/<perch:content id="author" type="related" output="slug" />160.jpg" width="160" height="160" alt="<perch:content id="author" type="related" output="firstname" /> <perch:content id="author" type="related" output="lastname" />" /></a></p>
+    <perch:content id="author" type="related" output="bio" html="true" />
+    <p class="more"><a href="/authors/<perch:content id="author" type="related" output="slug" />/">More information</a></p>
+</div><!-- author -->

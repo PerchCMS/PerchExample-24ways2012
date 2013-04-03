@@ -1,0 +1,69 @@
+<perch:before>
+<h1>Search results for &#8220;<perch:search id="key" />&#8221;</h1>
+
+<perch:form id="search" method="get" action="/search.php">
+    <div>
+        <perch:label for="q">Search</perch:label>
+        <perch:input type="search" id="q" />
+        <perch:input type="submit" value="Go" />
+    </div>
+</perch:form>
+
+<perch:if exists="paging">
+    <p><perch:search id="total" /> results</p>
+</perch:if>
+
+
+    <ul>
+</perch:before>
+
+        <li class="<perch:search id="perch_item_odd" />">
+            <h2><a href="<perch:search id="url" />"><perch:search id="title" /></a></h2>
+            <perch:if exists="excerpt"><p class="excerpt">&hellip;<perch:search id="excerpt" encode="false" />&hellip;</p></perch:if>
+            <p><a href="<perch:search id="url" />">
+                <perch:if exists="pageNavText">
+                    <perch:search id="pageNavText" />
+                <perch:else />
+                    <perch:search id="url" />
+                </perch:if>
+                </a></p>
+        </li>
+
+<perch:after>
+    </ul>
+
+    <perch:if exists="paging">
+        <div class="paging">
+            Page <perch:search id="current_page" /> of <perch:search id="number_of_pages" />
+            <perch:if exists="not_first_page">
+                <a href="<perch:search id="prev_url" encode="false" />">Previous</a>
+            </perch:if>
+            <perch:if exists="not_last_page">
+                <a href="<perch:search id="next_url" encode="false" />">Next</a>
+            </perch:if>
+        </div>
+    </perch:if>
+</perch:after>
+
+
+<perch:noresults>
+
+    <perch:if exists="key">
+        <h1>Search results for &#8220;<perch:search id="key" />&#8221;</h1>
+    <perch:else />
+        <h1>Search</h1>
+    </perch:if>
+
+    <perch:form id="search" method="get" action="/search.php">
+        <div>
+            <perch:label for="q">Search</perch:label>
+            <perch:input type="search" id="q" />
+            <perch:input type="submit" value="Go" />
+        </div>
+    </perch:form>
+
+    <perch:if exists="key">
+        <p>Sorry, there are no results for &#8220;<perch:search id="key" />&#8221;.</p>
+    </perch:if>
+
+</perch:noresults>

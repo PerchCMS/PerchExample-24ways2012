@@ -1,0 +1,17 @@
+<perch:before>
+<h2>Home</h2>
+<ul id="articlelist">
+</perch:before>
+<li>
+	<h3>
+		<a class="author" href="/authors/<perch:content id="author" type="related" output="slug" />/"><img src="http://cloud.24ways.org/authors/<perch:content id="author" type="related" output="slug" />160.jpg" width="80" height="80" alt="<perch:content id="author" />" /></a>
+		<strong><perch:content id="date" format="j" /> <em>12/<perch:content id="date" format="Y" /></em></strong>
+		<a href="/<perch:content id="date" format="Y" />/<perch:content id="slug" />/"><perch:content id="title" /></a>
+	</h3>
+	<perch:content id="excerpt" type="textarea" label="Excerpt" textile="true" />
+
+	<p>Impress your friends with <a href="/<perch:content id="date" format="Y" />/<perch:content id="slug" />/"><perch:content id="impress" /></a></p>
+</li>
+<perch:after>
+</ul>
+</perch:after>

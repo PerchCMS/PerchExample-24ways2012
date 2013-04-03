@@ -1,0 +1,21 @@
+<perch:before>
+	<ul class="comments">
+</perch:before>
+	<li<perch:if id="commentScore" match="lte" value="-3"> class="unhelpful"</perch:if>>
+		<div class="<perch:if id="perch_item_odd" type="hidden">even<perch:else />odd</perch:if>">
+			<p class="permlink"><a href="#c0<perch:comments id="commentID" type="hidden" />" id="c0<perch:comments id="commentID" />"><perch:comments id="commentDateTime" format="d/m/Y" type="date" time="true" label="Date" /></a></p>
+			<h4>
+				<perch:if exists="commentURL"><a href="<perch:comments id="commentURL" type="url" label="URL" order="3" />"></perch:if>
+					<img src="//www.gravatar.com/avatar/<perch:comments id="commentEmail" type="email" label="Email" order="2" hash="md5" required="true" />?s=200&amp;d=http%3A%2F%2Fcloud.24ways.org%2Fimg%2Fgravatar.png" width="100" height="100" />
+					<perch:comments id="commentName" type="text" label="Name" order="1" required="true" />
+					<perch:if exists="commentURL"><small><perch:comments id="commentURL" type="url" label="URL" order="3" /></small></perch:if>
+				<perch:if exists="commentURL"></a></perch:if>
+			</h4>
+			<perch:comments id="commentHTML" encode="false" html="true" type="textarea" label="Message (HTML)" order="4" required="true" />
+
+			<p class="vote">Vote <a href="/vote/up/c<perch:comments id="commentID" type="hidden" />/">Helpful</a> or <a href="/vote/down/c<perch:comments id="commentID" type="hidden" />/">Unhelpful</a></p>
+		</div>
+	</li>
+<perch:after>
+	</ul>
+</perch:after>

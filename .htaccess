@@ -1,0 +1,42 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.24ways\.org$ [NC] 
+RewriteRule ^(.*)$ http://24ways.org/$1 [R=301,L]
+
+# ye olde urls
+RewriteRule ^advent/(.*)/$ /2005/$1/ [R,L]
+
+# authors
+RewriteRule ^authors/$ /authors.php [L]
+RewriteRule ^authors/([a-z0-9-]+)/$ /author.php?slug=$1 [L]
+
+# years
+RewriteRule ^([0-9][0-9][0-9][0-9])/$ /year.php?year=$1 [L]
+
+# article
+RewriteRule ^([0-9][0-9][0-9][0-9])/([a-zA-Z0-9-\.]+)/$ /article.php?year=$1&slug=$2 [L]
+
+# short link 
+RewriteRule ^([0-9][0-9][0-9][0-9])([0-9][0-9])/$ /shortlink.php?year=$1&day=$2 [L]
+
+# comment voting
+RewriteRule ^vote/(up|down)/c([0-9]+)/$ /vote.php?type=$1&commentID=$2 [L]
+
+# search
+RewriteRule ^search/$ /search.php [QSA,L]
+
+# rss
+RewriteRule ^rss/$ /rss.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+# Redirect to PHP if it exists.
+# e.g. example.com/foo will display the contents of example.com/foo.php
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^(.+)$ $1.php [L,QSA]
+

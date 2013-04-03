@@ -1,0 +1,39 @@
+<div id="comments">
+	<h2>Vote <perch:comments id="votetype" />?</h2>
+
+	<ul class="comments">
+		<li>
+			<div class="<perch:if id="perch_item_odd" type="hidden">even<perch:else />odd</perch:if>">
+				<p class="permlink"><a href="#c<perch:comments id="commentID" type="hidden" />" id="c<perch:comments id="commentID" />"><perch:comments id="commentDateTime" format="d/m/Y" type="date" time="true" label="Date" /></a></p>
+				<h4>
+					<perch:if exists="commentURL"><a href="<perch:comments id="commentURL" type="url" label="URL" order="3" />"></perch:if>
+						<img src="//www.gravatar.com/avatar/<perch:comments id="commentEmail" type="email" label="Email" order="2" hash="md5" required="true" />?s=200&amp;d=http%3A%2F%2Fcloud.24ways.org%2Fimg%2Fgravatar.png" width="100" height="100" />
+						<perch:comments id="commentName" type="text" label="Name" order="1" required="true" />
+						<perch:if exists="commentURL"><small><perch:comments id="commentURL" type="url" label="URL" order="3" /></small></perch:if>
+					<perch:if exists="commentURL"></a></perch:if>
+				</h4>
+				<perch:comments id="commentHTML" encode="false" html="true" type="textarea" label="Message (HTML)" order="4" required="true" />
+			</div>
+		</li>
+
+	</ul>
+
+	<div id="newcomment">
+
+		<perch:form id="vote" method="post" app="perch_comments" action="/vote/<perch:comments id="votetype" />/c<perch:comments id="commentID" />/">
+			<div class="comments-wrapper vote">
+				<p class="buttonbar">
+					<perch:input type="hidden" id="commentID" value="<perch:comments id="commentID" />" />
+					<perch:input type="hidden" id="vote" value="<perch:comments id="votetype" />" />
+					<perch:input type="hidden" id="cookie" value="24wv" />
+					<perch:input type="hidden" id="cookie_path" value="/vote/" />
+					<perch:input type="submit" id="submitComment" value="Vote" class="button" />
+				</p><!-- buttonbar -->
+			</div>
+			<perch:success>
+				<p>Thank you for voting.</p>
+			</perch:success>
+		</perch:form>
+	</div>
+
+</div>

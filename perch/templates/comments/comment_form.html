@@ -1,0 +1,43 @@
+<div id="comments">
+    <h3>Comments</h3>
+	<p class="disclaimer">Comments are ordered by helpfulness, as indicated by you. Help us pick out the gems and discourage asshattery by voting on notable comments.</p>
+	<p class="disclaimer">Got something to add? You can <a href="#newcomment">leave a comment below</a>.</p>
+	<perch:comments id="comments" encode="false" />
+
+	<div id="newcomment">
+		<h3 id="cpreview">Impress us</h3>
+	    <perch:form id="comment" method="post" app="perch_comments" action="#cpreview">
+			<div class="comments-wrapper">
+				<p>
+					<perch:label for="commentName">Name</perch:label>
+					<perch:input type="text" id="commentName" required="true" label="Name" antispam="name" class="comment_name_input" />
+					<perch:error for="commentName" type="required">Required</perch:error>
+				</p>
+				<p>
+					<perch:label for="commentEmail">Email</perch:label>
+					<perch:input type="email" id="commentEmail" required="true" label="Email" antispam="email" class="comment_email_input" />
+					<perch:error for="commentEmail" type="required">Required</perch:error>
+					<perch:error for="commentEmail" type="format">Check format of address</perch:error>
+				</p>
+				<p class="optional">		
+					<perch:label for="commentURL">Website</perch:label>
+					<perch:input type="url" id="commentURL" placeholder="http://" label="URL" antispam="url" class="comment_web_input" />
+				</p>
+				<p class="textarea">
+					<perch:label for="commentHTML">Message</perch:label>
+					<perch:input type="textarea" id="commentHTML" required="true" label="Message" antispam="body" cols="25" rows="5" />
+					<perch:error for="commentHTML" type="required">Required</perch:error>
+				</p>
+				<p class="disclaimer">Be friendly / use <a href="http://www.textism.com/tools/textile/">Textile</a></p>
+				<p class="buttonbar">
+					<perch:input type="hidden" id="parentID" value="<perch:comments id="parentID" />" />
+					<perch:input type="hidden" id="parentTitle" value="<perch:comments id="parentTitle" />" />
+					<perch:input type="submit" id="submitComment" value="Submit" class="button" />
+				</p><!-- buttonbar -->
+			</div>
+			<perch:success>
+				<p>Thank you. Your comment has been submitted and will appear on the site once approved.</p>
+			</perch:success>
+		</perch:form>
+	</div>
+</div><!-- comments -->

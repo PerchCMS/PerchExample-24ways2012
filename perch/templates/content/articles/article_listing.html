@@ -1,0 +1,29 @@
+<perch:before>
+<h2><a href="/2011/">Archives</a></h2>
+
+<ul id="tabs">
+	<li<perch:if id="year" value="2011"> class="selected"</perch:if>><a href="/2011/">2011</a></li>
+	<li<perch:if id="year" value="2010"> class="selected"</perch:if>><a href="/2010/">2010</a></li>
+	<li<perch:if id="year" value="2009"> class="selected"</perch:if>><a href="/2009/">2009</a></li>
+	<li<perch:if id="year" value="2008"> class="selected"</perch:if>><a href="/2008/">2008</a></li>
+	<li<perch:if id="year" value="2007"> class="selected"</perch:if>><a href="/2007/">2007</a></li>
+	<li<perch:if id="year" value="2006"> class="selected"</perch:if>><a href="/2006/">2006</a></li>
+	<li<perch:if id="year" value="2005"> class="selected"</perch:if>><a href="/2005/">2005</a></li>
+</ul>
+
+<ul id="articlelist">
+</perch:before>
+<li>
+	<h3>
+		<a class="author" href="/authors/<perch:content id="author" type="related" output="slug" />/"><img src="http://cloud.24ways.org/authors/<perch:content id="author" type="related" output="slug" />160.jpg" width="80" height="80" alt="<perch:content id="author" />" /></a>
+		<strong><perch:content id="date" type="date" label="Day" required="true" order="6" format="j" /> <em><perch:content id="date" type="date" label="Day" required="true" order="6" format="m/Y" /></em></strong>
+		<a href="/<perch:content id="date" format="Y" type="date" />/<perch:content id="slug" />/"><perch:content id="title" /></a>
+	</h3>
+	<perch:content id="excerpt" type="textarea" label="Excerpt" textile="true" />
+
+	<p>Impress your friends with <a href="/<perch:content id="date" format="Y" type="date" />/<perch:content id="slug" />/"><perch:content id="impress" /></a></p>
+</li>
+
+<perch:after>
+</ul>
+</perch:after>
